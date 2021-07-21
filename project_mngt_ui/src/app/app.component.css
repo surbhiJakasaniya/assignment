@@ -1,0 +1,36 @@
+.text-center{
+  text-align: center;
+}
+
+.float-right{
+  float: right;
+}
+
+.pms-navbar{
+  height: 120px;
+  background-color: #17a2b8!important;
+  display: block;
+}
+
+.component-container{
+  position: absolute;
+  background-color:white;
+}
+
+.thinshadow{
+  box-shadow: 1px 1px 5px 0px rgba(143,143,143,1);
+  margin: -30px 100px 0px;
+}
+
+.thinshadow .card:first-child{
+  border: unset;
+  border-radius: unset;
+}
+
+.navbar-brand{
+  font-family: 'Raleway';
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: xx-large;
+}

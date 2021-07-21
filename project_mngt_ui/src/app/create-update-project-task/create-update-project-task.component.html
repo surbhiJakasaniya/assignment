@@ -1,0 +1,51 @@
+  <div class="card">
+    <h6 class="section-title"> {{selectedTask.id == -1 ? 'Add Task' : 'Edit Task'}} </h6>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="taskName">Task Name :</label>
+            <input type="text" class="form-control" id="taskName" [(ngModel)]="selectedTask.name" placeholder="Enter task name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="taskDescription">Description :</label>
+            <textarea type="text" class="form-control" id="taskDescription" [(ngModel)]="selectedTask.description" placeholder="Project description"> </textarea>
+          </div>    
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="startDate">Start Date :</label>
+            <input type="text" class="form-control" id="startDate" [(ngModel)]="selectedTask.start_date" placeholder="YYYY-MM-DD">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="endDate">End Date :</label>
+            <input type="text" class="form-control" id="endDate" [(ngModel)]="selectedTask.end_date" placeholder="YYYY-MM-DD">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group float-right mt-30">
+            <button *ngIf="selectedTask.id == -1" (click)="createProjectTask()" type="button" class="btn btn-outline-action">Craete Task</button>
+            <button *ngIf="selectedTask.id != -1" (click)="updateProjectTask()" type="button" class="btn btn-outline-action">Save Changes</button>
+            <button (click)="closeTask()" type="button" class="btn btn-outline-action ml-10">Cancel</button>
+          </div>
+        </div>
+        <div class="col-12">
+          <div *ngIf="save_error != []" class="end_date" >
+            <ul>
+              <li *ngFor="let error of save_error">
+                {{error}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

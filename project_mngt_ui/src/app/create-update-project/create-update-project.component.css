@@ -1,0 +1,44 @@
+
+.form-group-sm .form-control + .form-control-feedback.fa, .form-group-sm .form-control + .form-control-feedback.fas, .form-group-sm .form-control + .form-control-feedback.far, .form-group-sm .form-control + .form-control-feedback.fab, .form-group-sm .form-control + .form-control-feedback.glyphicon, .form-group-sm .form-control + .form-control-feedback.ion {
+  line-height: calc(1.8125rem + 2px);
+}
+
+label{
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.float-right{
+  float: right;
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.section-title {
+  margin-top: -15px;
+  background: white;
+  width: fit-content;
+  padding: 5px;
+  margin-left: 15px;
+}  
+
+.btn-action,  .btn-outline-action:hover{
+  color: white;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.btn-action:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+.btn-outline-action {
+  color: #17a2b8;
+  border-color: #17a2b8;
+}

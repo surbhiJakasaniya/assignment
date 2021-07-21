@@ -1,0 +1,23 @@
+.float-right{
+  float: right;
+}
+
+
+.no-border{
+  border: unset;
+  border-radius: unset;
+}
+.btn-action,  .btn-outline-action:hover{
+  color: white;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.btn-action:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+.btn-outline-action {
+  color: #17a2b8;
+  border-color: #17a2b8;
+}

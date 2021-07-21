@@ -1,0 +1,53 @@
+
+  <div class="card">
+    <h6 class="section-title"> {{selectedProject.id == -1 ? 'Add Project' : 'Edit Project'}} </h6>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="projectName">Project Name :</label>
+            <input type="text" class="form-control" id="projectName" [(ngModel)]="selectedProject.name" placeholder="Enter project name">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="projectDuration">Duration :</label>
+            <input type="text" class="form-control" id="projectDuration" [(ngModel)]="selectedProject.duration" placeholder="Enter duration"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="projectDescription">Description :</label>
+            <textarea type="text" class="form-control" id="projectDescription" [(ngModel)]="selectedProject.description" placeholder="Project description"> </textarea>
+          </div>    
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exampleInputFile">File input</label> 
+            <input type="file" (change)="fileChanged($event)" class="ml-10 custom-file-input" id="exampleInputFile">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group float-right">
+              <button *ngIf="selectedProject.id == -1" (click)="createProject()" type="button" class="btn btn-outline-action">Craete Project</button>
+              <button *ngIf="selectedProject.id != -1" (click)="updateProject()" type="button" class="btn btn-outline-action">Save Changes</button>
+              <button (click)="closeProject()" type="button" class="btn btn-outline-action ml-10">Cancel</button>
+          </div>
+        </div>
+        <div class="col-12">
+          <div *ngIf="save_error != []">
+            <ul>
+              <li *ngFor="let error of save_error">
+                {{error}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

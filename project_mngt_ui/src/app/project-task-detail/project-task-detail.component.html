@@ -1,0 +1,39 @@
+
+<div class="card no-border">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-10">
+        <h1 class="">{{projectTaskName}} <span class="sub-title">(Task)</span></h1>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-action mt-2 float-right" (click)="editTaskBtn(projectTask)"> <i class="fa fa-pencil"></i> Edit Project Task</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="tab-content p-1">
+      <app-create-update-project-task *ngIf="makeTaskEditable == true" (notify)="updateTaskList($event)" [selectedTask]="projectTask" [selectedProject]="projectTask.project"> </app-create-update-project-task>
+    </div>
+
+
+    <div class="tab-content project-detail-container" *ngIf="makeTaskEditable != true">
+      <div class="row">
+        <div class="col-4">
+          <div class="mt-20">
+            <b> Project : </b> <a [routerLink]="['/project',projectTask.project]"><i> {{projectTask.project_name}} </i></a>
+          </div>
+          <div class="mt-20">
+            <b> Start Date : </b> <i> {{projectTask.start_date}} </i>
+          </div>
+          <div class="mt-20">
+            <b> End Date : </b> <i> {{projectTask.end_date}} </i>
+          </div>
+        </div>
+        <div class="col-8 mt-20">
+            <b> Description : </b><br/> <i> {{projectTask.description}} </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

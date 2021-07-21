@@ -1,0 +1,41 @@
+
+<div class="card no-border">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="card-title">Projects</h1>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-action mt-2 float-right" (click)="editProjectBtn({'id':-1})"> + New Project</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="tab-content p-1">
+      <app-create-update-project *ngIf="makeProjectEditable == true" (notify)="updateProjectData($event)" [selectedProject]="selectedProject"></app-create-update-project>
+    </div>
+    <div  *ngIf="makeProjectEditable != true"  class="tab-content p-0">
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="30" >Project Name</th>
+            <th width="40" >Description</th>
+            <th width="10" class="text-center">View</th>
+            <th width="10" class="text-center">Edit</th>
+            <th width="10" class="text-center">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td width="30" >{{project.name}}</td>
+            <td width="40" >{{project.description}}</td>
+            <td width="10" (click)="viewProject(project)" class="text-center"><a [routerLink]="['/project',project.id]"> <i class="fa fa-search"></i> </a></td>
+            <td width="10" (click)="editProjectBtn(project)" class="text-center"><i class="fa fa-pencil" role="button"></i></td>
+            <td width="10" (click)="deleteProject(project)" class="text-center"><i class="fa fa-trash" role="button"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
